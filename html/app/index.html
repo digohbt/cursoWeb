@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercicios </title>
+    <style> 
+    #conteudo{
+        padding: 40px , 0px;
+    }
+    </style>
+
+</head>
+<body>
+    <head>
+       <h1>exercicios  </h1> 
+    </head>
+    <nav>
+        <a href wm-nav="./exercicio/teste.html"> 00 ++ TESTE </a>|
+        <a href wm-nav="./exercicio/texto01.html"> 01 - Texto </a> 
+        <a href wm-nav="./exercicio/lista.html"> 01 - Texto </a> 
+        <a href wm-nav="./exercicio/lista02.html"> 01 - Texto </a> 
+        
+    </nav><br>
+
+    <section id="conteudo" > 
+
+    </section><br>
+
+    <footer>
+        <br> <h1>Curso Web MOderno  </h1> 
+    </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link =>{
+            const conteudo = document.getElementById('conteudo') 
+
+            link.onclick = function (e){
+                e.preventDefault() // previnir comportamento padrao de navegar nas peginas
+                
+                fetch(link.getAttribute('wm-nav'))// RERUISICAO AJAX
+                .then (resp => resp.text())
+                .then (html => conteudo.innerHTML = html)
+
+            }
+        })
+    </script>
+</body>
+</html>
