@@ -7,6 +7,9 @@ const fun2 = function (){ }
 // armazernar em um array uma funcao 
 const array = [ function (a, b){ return a + b } , fun1 , fun2]
 console.log(array [0](2,3))
+console.log(array [0](2,3))
+console.log(array [0](2,3))
+console.log(array [0](2,3))
 
 // armazrar em um atributo de objeto 
 const obj = {}
